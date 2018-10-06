@@ -2,11 +2,7 @@ import React from 'react';
 
 export default class Formione extends React.Component {
 
-    constructor(){
-        super();
-        //this.state = { items: [] };
-    }
-
+    
     setData01(e){
         e.preventDefault();
         var student_id = document.getElementById('student_id').value;
@@ -50,10 +46,7 @@ export default class Formione extends React.Component {
             fontSize: 16,
             marginLeft: 300,
         };
-        const margin_1 ={
-            marginLeft: 250,
-        };
-
+       
         return (
             <div>
                 <h3 style={title_display} className="form-title">Industrial Training Management - INTERNSHIP ACCEPTANCE FORM I-1</h3> <br/>

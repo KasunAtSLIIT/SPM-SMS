@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Table} from 'react-bootstrap';
+import {Table} from 'react-bootstrap';
 
 export default class Formithree extends React.Component {
 
@@ -78,13 +78,7 @@ export default class Formithree extends React.Component {
             fontSize: 16,
             marginLeft: 300,
         };
-        const margin_1 ={
-            marginLeft: 250,
-        };
-        const select_option = {
-            width : 500,
-        };
-
+       
         const table ={
             borderspacing: 0,
             width: 100,
