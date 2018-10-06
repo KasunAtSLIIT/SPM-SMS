@@ -1,12 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-//function for convert flied value to lowercase
-function serachingfor(term) {
-    return function(x){
-        return x.comp_name.toLowerCase().includes(term.toLowerCase())||!term;
-    }
-}
+
 export default class formi5 extends React.Component {
 
     constructor(props){

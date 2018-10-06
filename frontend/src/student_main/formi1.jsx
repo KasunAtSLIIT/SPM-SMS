@@ -26,7 +26,7 @@ export default class Formione extends React.Component {
         return (
             <div>
                 
-                //BODY PART - HEADING PART
+
                 <h3 style={title_display}>Industrial Training Management - INTERNSHIP ACCEPTANCE FORM I-1</h3> <br/>
                 <center><h5>(Enter Student ID and Check Details**)</h5>
                 </center>
@@ -51,7 +51,7 @@ export default class Formione extends React.Component {
                             </div>
                             <div className="col-md-6">
                                 <select style={select_option} className="form-control" id="testpriority">
-                                    //TODO: TO RETRIEVE AL THE SUPERVISOR'S DETAILS TO THE FORM
+
                                     <option id="p0">--Choose one--</option>
                                     <option id="p1">Mr.xxxxxxxxxxxxxxx</option>
                                     <option id="p2">Mr.yyyyyyyyyyyyyyy</option>
@@ -137,7 +137,7 @@ export default class Formione extends React.Component {
 
                         <div className="row">
                             <div className="col-md-3">
-                                //BUTON PART --> TODO : DISPLAY A SUCCESSFULL MESSAGE WHEN SUBMIT BUTTON IS PRESSED.
+
                                 <button type="submit" style={button_css}>Submit Form</button>
                             </div>
                             <div className="col-md-3">

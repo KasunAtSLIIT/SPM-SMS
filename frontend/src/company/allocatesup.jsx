@@ -98,7 +98,7 @@ export default class Allocatesup extends React.Component {
                                 <div className="form-group ">
                                     <label className="col-form-label">Company Name  </label>
                                    
-                                    //filter company name 
+
                                     <select className="form-control" onChange={this.searchHandler.bind(this)} ref='companyname'>
                             {this.state.company.filter(serachingfor(this.state.term)).map(users=>
                             <option>
@@ -122,8 +122,7 @@ export default class Allocatesup extends React.Component {
                         <div className="form-group ">
                             <label className="col-form-label" htmlFor="inputDefault">Student Reg Number <text style={{color:'red'}}>*</text></label>
                             <select className="form-control" ref='studentid'>
-                                
-                                //filter student id
+
                             {this.state.company.filter(serachingfor(this.state.term)).map(users=>
                             <option>
                                     {users.stu_id}

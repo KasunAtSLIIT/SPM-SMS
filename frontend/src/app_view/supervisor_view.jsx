@@ -9,7 +9,7 @@ import formi3_feedback from '../supervisor/formi3_feedback';
 import Supervisornav from '../common/navigation/supervisornav';
 
 
-export default class Supervisor_App extends React.Component {
+export default class SupervisorApp extends React.Component {
     /**
      * supervisor layout
      */
