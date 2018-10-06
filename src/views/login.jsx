@@ -125,7 +125,7 @@ class Login extends Component {
                 this.handleClose();
                 this.notifySuccess("Successfully Submitted.!")
             }).catch(error=>{
-
+                this.notifyError(error.response["message"]);
             })
         }
 
