@@ -38,7 +38,7 @@ export default class Formithree extends React.Component {
         var details = document.getElementById('details').value;
 
 
-        fetch('http://localhost:3015/forms/postforms', {
+        fetch('http://localhost:3020/forms/postforms', {
             method : 'post',
             headers : {
                 'Accept': 'application/json, text/plain, */*',
@@ -53,12 +53,12 @@ export default class Formithree extends React.Component {
             return data;
         }).then(function (confirm) {
             console.log(confirm);
-            alert('success');
+            alert('successfully Form I-3 details are sent for  ' + month + " month");
         })
     }
 
     componentDidMount(){
-        fetch(`http://localhost:3015/forms/getforms`)
+        fetch(`http://localhost:3020/forms/getforms`)
             .then(result=>result.json())
             .then(items=>this.setState({items}))
     }
@@ -216,18 +216,18 @@ export default class Formithree extends React.Component {
                                 </div>
                                 <div className="col-md-6">
                                 <select id="month" className="month-form">
-                                    <option value="jan">January</option>
-                                    <option value="feb">February</option>
-                                    <option value="mar">March</option>
-                                    <option value="apr">April</option>
+                                    <option value="janary">January</option>
+                                    <option value="february">February</option>
+                                    <option value="march">March</option>
+                                    <option value="april">April</option>
                                     <option value="may">May</option>
-                                    <option value="jun">June</option>
-                                    <option value="jul">July</option>
-                                    <option value="aug">August</option>
-                                    <option value="sept">September</option>
-                                    <option value="oct">October</option>
-                                    <option value="nov">November</option>
-                                    <option value="dec">December</option>
+                                    <option value="june">June</option>
+                                    <option value="july">July</option>
+                                    <option value="august">August</option>
+                                    <option value="september">September</option>
+                                    <option value="october">October</option>
+                                    <option value="november">November</option>
+                                    <option value="december">December</option>
                                 </select>
                                 </div>
                             </div>

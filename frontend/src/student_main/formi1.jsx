@@ -1,6 +1,41 @@
 import React from 'react';
 
 export default class Formione extends React.Component {
+
+    constructor(){
+        super();
+        //this.state = { items: [] };
+    }
+
+    setData01(e){
+        e.preventDefault();
+        var student_id = document.getElementById('student_id').value;
+        var student_name = document.getElementById('student_name').value;
+        var address = document.getElementById('address').value;
+        var home_phone = document.getElementById('home_phone').value;
+        var mobile = document.getElementById('mobile').value;
+        var email = document.getElementById('email').value;
+        var semi = document.getElementById('semi').value;
+        var year = document.getElementById('year').value;
+        var cgpa = document.getElementById('cgpa').value;
+
+
+        fetch('http://localhost:3020/students/postStudents', {
+            method : 'post',
+            headers : {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body : JSON.stringify({student_id:student_id,student_name: student_name, address:address , 
+                home_phone:home_phone,mobile:mobile, email:email,semi:semi,year:year,cgpa:cgpa})
+        }).then(function (data) {
+            return data;
+        }).then(function (confirm) {
+            console.log(confirm);
+            alert('successfully student details are sent to the supervisor..!');
+        })
+    }
+
     render() {
 
         const container_display = {
@@ -22,18 +57,16 @@ export default class Formione extends React.Component {
         return (
             <div>
                 <h3 style={title_display} className="form-title">Industrial Training Management - INTERNSHIP ACCEPTANCE FORM I-1</h3> <br/>
-                <center><h5>(All the fields Required**)</h5>
-                </center>
-
+                <h4>Enter student details</h4>
+                <hr />
                 <form className="form-form">
                     <div className="container" style={container_display}>
-
-                        <div className="row" style={margin_1}>
+                        <div className="row">
                             <div className="col-md-3">
                                 <label>Student ID</label>
                             </div>
-                            <div className="col-md-3">
-                                <input type="number" className="form-control" id="studentid"/>
+                            <div className="col-md-6">
+                                <input type="text" maxLength="10" className="form-control" id="student_id"/>
                             </div>
                         </div>
                         <br/>
@@ -43,7 +76,7 @@ export default class Formione extends React.Component {
                                 <label>Student's Name</label>
                             </div>
                             <div className="col-md-6">
-                                <input type="text" className="form-control" id="studentname"/>
+                                <input type="text" className="form-control" id="student_name"/>
                             </div>
                         </div>
                         <br/>
@@ -53,7 +86,7 @@ export default class Formione extends React.Component {
                                 <label>Address</label>
                             </div>
                             <div className="col-md-6">
-                                <input type="text" className="form-control" id="studentaddress"/>
+                                <input type="text" className="form-control" id="address"/>
                             </div>
                         </div>
                         <br/>
@@ -63,7 +96,7 @@ export default class Formione extends React.Component {
                                 <label>Home phone</label>
                             </div>
                             <div className="col-md-6">
-                                <input type="number" className="form-control" id="studentnum"/>
+                                <input type="number" className="form-control" maxLength="10" id="home_phone"/>
                             </div>
                         </div>
                         <br/>
@@ -73,7 +106,7 @@ export default class Formione extends React.Component {
                                 <label>Mobile Number</label>
                             </div>
                             <div className="col-md-6">
-                                <input type="number" className="form-control" id="studenthpnum"/>
+                                <input type="number" maxLength="10" className="form-control" id="mobile"/>
                             </div>
                         </div>
                         <br/>
@@ -84,7 +117,7 @@ export default class Formione extends React.Component {
                                 <label>E-mail Address</label>
                             </div>
                             <div className="col-md-6">
-                                <input type="email" className="form-control" id="studentemail"/>
+                                <input type="text" className="form-control" id="email"/>
                                 <h6>** Use comma to seperate multiple email addresses</h6>
                             </div>
                         </div>
@@ -95,26 +128,26 @@ export default class Formione extends React.Component {
                                 <label>Semester</label>
                             </div>
                             <div className="col-md-2">
-                                <input type="text" className="form-control" id="studentsemester"/>
+                                <input type="text" className="form-control" id="semi"/>
                             </div>
                             <div className="col-md-2">
                                 <label>Year</label>
                             </div>
                             <div className="col-md-2">
-                                <input type="text" className="form-control" id="studentyr"/>
+                                <input type="number" className="form-control" id="year"/>
                             </div>
                             <div className="col-md-2">
                                 <label>CGPA</label>
                             </div>
                             <div className="col-md-2">
-                                <input type="text" className="form-control" id="studentcgpa"/>
+                                <input type="number" className="form-control" id="cgpa"/>
                             </div>
                         </div>
                         <br/>
 
                         <div className="row">
                             <div className="col-md-3">
-                                <button className="btn-form" type="submit" style={button_css}>Submit Form</button>
+                                <button className="btn-form" type="submit" style={button_css} onClick={this.setData01.bind(this)} >Submit Form</button>
                             </div>
                             <div className="col-md-3">
                                 <button className="btn-form" type="reset" style={button_css}>Cancel</button>
