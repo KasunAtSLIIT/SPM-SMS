@@ -48,6 +48,22 @@
   margin-top:10px;
 }
 
+
+.form-6-download{
+  height: 100px;
+  /* background-color: blue; */
+  font-size: 40px;
+  color: red;
+}
+
+/* .form6-btn{
+  background-image: url("./student_main/images/icon1.png");
+  height: 60px;
+  width: 60px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+} */
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
