@@ -30,7 +30,7 @@ export default class StuRegister extends Component {
                 };
                 console.log(compData);
 
-                axios.post("http://localhost:8000/company", compData).then((res) => {upd
+                axios.post("http://localhost:8000/company", compData).then((res) => {
                     const stuData = {
                         "stu_id": this.refs.stu_dit.value,
                         "company_id": res.data._id,

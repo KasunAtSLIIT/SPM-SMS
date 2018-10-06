@@ -3,7 +3,7 @@ import '../App.css';
 import {Footer} from "../common/footer/footer";
 import {Header} from "../common/header/header";
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Allocatesup from '../company/allocatesup';
+import formi1_2 from '../supervisor/formi1_part2';
 import Supervisornav from '../common/navigation/supervisornav';
 
 
@@ -23,7 +23,7 @@ export default class Supervisor_App extends React.Component {
                         <div className="col-md-10 ">
                             <div className="row">
                                 <div className="col-md-12 top-nav">
-                                  <Route  path="/Allocation" component={Allocatesup} />
+                                  <Route  path="/Allocation" component={formi1_2} />
                                 </div>
                             </div>
                         </div>
