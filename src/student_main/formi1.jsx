@@ -1,6 +1,38 @@
 import React from 'react';
+import './../App.css';
 
 export default class Formione extends React.Component {
+
+    
+    setData01(e){
+        e.preventDefault();
+        var student_id = document.getElementById('student_id').value;
+        var student_name = document.getElementById('student_name').value;
+        var address = document.getElementById('address').value;
+        var home_phone = document.getElementById('home_phone').value;
+        var mobile = document.getElementById('mobile').value;
+        var email = document.getElementById('email').value;
+        var semi = document.getElementById('semi').value;
+        var year = document.getElementById('year').value;
+        var cgpa = document.getElementById('cgpa').value;
+
+
+        fetch('http://localhost:3020/students/postStudents', {
+            method : 'post',
+            headers : {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body : JSON.stringify({student_id:student_id,student_name: student_name, address:address , 
+                home_phone:home_phone,mobile:mobile, email:email,semi:semi,year:year,cgpa:cgpa})
+        }).then(function (data) {
+            return data;
+        }).then(function (confirm) {
+            console.log(confirm);
+            alert('successfully student details are sent to the supervisor..!');
+        })
+    }
+
     render() {
 
         //Inline CSS For the Form
