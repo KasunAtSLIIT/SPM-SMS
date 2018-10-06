@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-
+//function for convert flied value to lowercase
 function serachingfor(term) {
     return function(x){
         return x.comp_name.toLowerCase().includes(term.toLowerCase())||!term;
@@ -17,24 +17,33 @@ export default class Allocatesup extends React.Component {
     }
 
     componentDidMount(){
-        
+        /**
+         * student service calling
+         */
         axios.get('http://localhost:8000/students')
         .then(res => {
             this.setState({company:res.data});
             console.log(res.data)
         });
-        axios.get('http://localhost:8000/company')
+      /*  axios.get('http://localhost:8000/company')
         .then(res => {
             this.setState({com_detail:res.data});
             console.log(res.data)
-        });
-    
+          });
+    */
     }
+
+    /**
+     * Handling user input for search
+     */
     searchHandler(event){
         event.preventDefault();
         this.setState({term:event.target.value})
     }
 
+    /**
+     * button click
+     */
     handleClick(){
         var sup = this.refs.supervisor.value;
         var std = this.refs.student.value;
@@ -60,7 +69,7 @@ export default class Allocatesup extends React.Component {
         
                 this.setState({assign:assignment});
         
-               
+               //check user fields
                 if(cmp==='' || std===''|| sup==='' || mail==='' || position===''||pro===''||dur===''){
                     alert('Enter Correct details');
                 }
@@ -88,6 +97,8 @@ export default class Allocatesup extends React.Component {
                             <div className="col-md-6">
                                 <div className="form-group ">
                                     <label className="col-form-label">Company Name  </label>
+                                   
+                                    {/*//filter company name */}
                                     <select className="form-control" onChange={this.searchHandler.bind(this)} ref='companyname'>
                             {this.state.company.filter(serachingfor(this.state.term)).map(users=>
                             <option>
@@ -111,6 +122,8 @@ export default class Allocatesup extends React.Component {
                         <div className="form-group ">
                             <label className="col-form-label" htmlFor="inputDefault">Student Reg Number <text style={{color:'red'}}>*</text></label>
                             <select className="form-control" ref='studentid'>
+                                
+                                {/*//filter student id*/}
                             {this.state.company.filter(serachingfor(this.state.term)).map(users=>
                             <option>
                                     {users.stu_id}

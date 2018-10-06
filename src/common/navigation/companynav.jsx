@@ -5,6 +5,9 @@ import {Link} from 'react-router-dom'
 
 
 export default class Companynav extends React.Component {
+    /**
+     * company navigation 
+     */
     render() {
         return (
             <div className="navigation"><br/>

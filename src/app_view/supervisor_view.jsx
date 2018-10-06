@@ -8,6 +8,9 @@ import Supervisornav from '../common/navigation/supervisornav';
 
 
 export default class Supervisor_App extends React.Component {
+    /**
+     * supervisor layout
+     */
     render() {
         return (
             <Router>

@@ -8,6 +8,9 @@ import Examinernav from '../common/navigation/examinernav';
 
 
 export default class Examiner_App extends React.Component {
+    /**
+     * examiner layout
+     */
     render() {
         return (
             <Router>

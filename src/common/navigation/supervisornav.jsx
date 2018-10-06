@@ -5,6 +5,9 @@ import {Link} from 'react-router-dom'
 
 
 export default class Supervisornav extends React.Component {
+    /**
+     * supervisor navigation
+     */
     render() {
         return (
             <div className="navigation">

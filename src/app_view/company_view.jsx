@@ -8,6 +8,10 @@ import Allocatesup from '../company/allocatesup';
 
 
 export default class Company_App extends React.Component {
+
+    /**
+     * company layout
+     */
     render() {
         return (
             <Router>

@@ -33,12 +33,18 @@ class Login extends Component {
         };
     }
 
+    /**
+    *success notification
+    */
     notifySuccess = (message) => {
         toast.success(message, {
             position: toast.POSITION.BOTTOM_RIGHT
         });
     };
 
+    /**
+    *error notification
+    */
     notifyError = (message) => {
         toast.error(message, {
             position: toast.POSITION.BOTTOM_RIGHT
@@ -52,6 +58,9 @@ class Login extends Component {
         console.log(this.state);
     }
 
+    /**
+    * Form validation
+    */
     validation(){
         if(!this.state.newUsername){
             this.notifyError("Please enter a username");
@@ -67,6 +76,9 @@ class Login extends Component {
         }
     }
 
+    /**
+    * Login 
+    */
     handleSubmit=(event)=>{
         var user={
             username:this.state.username,
@@ -75,6 +87,9 @@ class Login extends Component {
         event.preventDefault();
         BaseUrl.post(`users`,user)
             .then(res => {
+                /**
+                *set userrole and username in localstorage 
+                */
                 localStorage.setItem('token',res.data.token);
                 localStorage.setItem('userRole',res.data.userRole);
                 localStorage.setItem('username',res.data.username);
@@ -110,7 +125,7 @@ class Login extends Component {
                 this.handleClose();
                 this.notifySuccess("Successfully Submitted.!")
             }).catch(error=>{
-
+                this.notifyError(error.response["message"]);
             })
         }
 

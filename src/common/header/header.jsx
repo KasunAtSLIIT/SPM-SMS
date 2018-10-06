@@ -11,6 +11,10 @@ export class Header extends React.Component {
             username:''
         }
     }
+
+    /**
+     * set logged in user in the header
+     */
     componentDidMount(){
         this.setState({
             username:localStorage.getItem('username')
@@ -19,6 +23,9 @@ export class Header extends React.Component {
         console.log(this.state.username)
     }
 
+    /**
+     * logout
+     */
     logout(){
         ReactDOM.render(<Login/>, document.getElementById('root'));
     }

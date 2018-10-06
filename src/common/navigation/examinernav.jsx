@@ -5,6 +5,10 @@ import {Link} from 'react-router-dom'
 
 
 export default class Examinernav extends React.Component {
+
+    /**
+     * examinor navigation
+     */
     render() {
         return (
             <div className="navigation">

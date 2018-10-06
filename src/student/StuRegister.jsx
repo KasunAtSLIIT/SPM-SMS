@@ -4,10 +4,18 @@ import axios from 'axios';
 
 export default class StuRegister extends Component {
 
+    /**
+     * student registration
+     */
     handleformSubmit(e) {
         e.preventDefault();
 
         const student_id = this.refs.stu_dit.value;
+    /**
+     * call student service with the form student id and checks if the new student is already registered with a company.
+     *If student id not exists,student form data collected and student and ompany backend services are called to 
+     *store the registration info. 
+     */
 
         axios.get("http://localhost:8000/students/" + student_id).then((res) => {
 
